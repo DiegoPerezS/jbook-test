@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Anotación de tipos celulares &#8212; Agrupacion</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'anotacion';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Identificación de marcadores" href="marcadores.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Agrupacion - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Agrupacion - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Análisis de secuenciación de RNA de célula única utilizando Galaxy
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Primeros Pasos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Introducción al Flujo de Trabajo en Galaxy</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preprocesamiento</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnnData.html">Creación de objeto AnnData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocesamiento.html">Preprocesamiento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qc.html">Selección y filtro de células y genes basado en métricas de calidad</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Filtrado de datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="caracteristicas.html">Selección de características</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensiones.html">Reducción de dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anotación</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="marcadores.html">Identificación de marcadores</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Anotación de tipos celulares</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/anotacion.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Anotación de tipos celulares</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">55: Anotación de tipos celulares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-png">58: Gráfico: Agregar anotación de tipo celular a grupos de células (png)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-svg">59: Gráfico: Agregar anotación de tipo celular a grupos de células (svg)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-principales-genes-para-cada-tipo-celular">60: Gráfico: Expresión de principales genes para cada tipo celular</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="anotacion-de-tipos-celulares">
+<h1>Anotación de tipos celulares<a class="headerlink" href="#anotacion-de-tipos-celulares" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>55: Anotación de tipos celulares<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>En este análisis se utilizará la anotación de tipos celulares que se encuentra en el archivo Anndata (que hemos transformado y agregado variables a lo largo de todo el análisis). Se deben especificar los tipos celulares, estos pueden cambiarse en ‘Function to manipulate the object/Comma-separated list of new categories: [especificar tipos celulares separados por coma]’</p>
+<p>Utilizar la herramienta <strong>“Mannipulate AnnData object”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’input’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>Function to manipulate the object:</em> Rename categories of annotation</p>
+<ul>
+<li><p><em>Key for observations or variables annotation:</em> louvain</p></li>
+<li><p><em>Comma-separated list of new categories:</em> CD4+ T, CD14+, B, CD8+ T, FCGR3A+, NK, Dendritic, Megakaryocytes</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo UMAP agrupado - wilc - anotado.</p></li>
+<li><p>_Rename dataset: _Archivo UMAP agrupado - wilc - anotado.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-png">
+<h2>58: Gráfico: Agregar anotación de tipo celular a grupos de células (png)<a class="headerlink" href="#grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-png" title="Link to this heading">#</a></h2>
+<p>En este gráfico se espera observar algo similar al UMAP agrupado, pero con código de color para cada tipo celular, además del tipo celular escrito en cada grupo de células.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado - wilc - anotado).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting: Embeddings:</em> Scatter plot in UMAP basis, using ‘pl.umap’</p>
+<ul>
+<li><p><em>Keys for annotations of observations/cells or variables/genes:</em> louvain</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Show edges?:</em> No</p></li>
+<li><p><em>Show arrows?:</em> No</p></li>
+<li><p>_Sort order?: _Yes</p></li>
+<li><p><em>Plot attributes</em></p>
+<ul>
+<li><p>_Projection of plot: _2d</p></li>
+<li><p>_Location of legend: _on data</p></li>
+<li><p>_Legend font weight: _normal</p></li>
+<li><p><em>Location of legend:</em> on data</p></li>
+<li><p><em>Draw a frame around the scatter plot?:</em> Yes</p></li>
+<li><p><em>Number of panels per row:</em> 4</p></li>
+<li><p><em>Width of the space between multiple panels:</em> 0.1</p></li>
+<li><p><em>Height of the space between multiple panels:</em> 0.25</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_svg’:</em></p>
+<ul>
+<li><p><em>Label:</em> 58: Anotación de tipo celular en grupos de células.</p></li>
+<li><p>_Rename dataset: _58: Anotación de tipo celular en grupos de células.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-svg">
+<h2>59: Gráfico: Agregar anotación de tipo celular a grupos de células (svg)<a class="headerlink" href="#grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-svg" title="Link to this heading">#</a></h2>
+<p>Mismo gráfico que en el paso 58, pero diferente formato de salida</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado - wilc - anotado).</p></li>
+<li><p><em>Format for saving figures:</em> svg</p></li>
+<li><p><em>Method used for plotting: Embeddings:</em> Scatter plot in UMAP basis, using ‘pl.umap’</p>
+<ul>
+<li><p><em>Keys for annotations of observations/cells or variables/genes:</em> louvain</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Show edges?:</em> No</p></li>
+<li><p><em>Show arrows?:</em> No</p></li>
+<li><p>_Sort order?: _Yes</p></li>
+<li><p><em>Plot attributes</em></p>
+<ul>
+<li><p>_Projection of plot: _2d</p></li>
+<li><p>_Location of legend: _on data</p></li>
+<li><p>_Legend font weight: _normal</p></li>
+<li><p><em>Location of legend:</em> on data</p></li>
+<li><p><em>Draw a frame around the scatter plot?:</em> Yes</p></li>
+<li><p><em>Number of panels per row:</em> 4</p></li>
+<li><p><em>Width of the space between multiple panels:</em> 0.1</p></li>
+<li><p><em>Height of the space between multiple panels:</em> 0.25</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 59: Anotación de tipo celular en grupos de células.</p></li>
+<li><p>_Rename dataset: _59: Anotación de tipo celular en grupos de células.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-expresion-de-principales-genes-para-cada-tipo-celular">
+<h2>60: Gráfico: Expresión de principales genes para cada tipo celular<a class="headerlink" href="#grafico-expresion-de-principales-genes-para-cada-tipo-celular" title="Link to this heading">#</a></h2>
+<p>En este gráfico tenemos en el eje Y a la izquierda los diferentes tipos celulares anotados, en el eje Y a la derecha tenemos qué tan similares son estos grupos. En el eje X inferior se encuentran los genes que más influyen para la diferenciación entre grupos de células, y en el eje X superior se encuentra nuevamente la anotación de células, esta vez indicando cuales son los genes que más influyen en cada grupo de células anotado.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado - wilc - anotado).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Generic: Makes a dot plot of the expression values, using ‘pl.dotplot’</p>
+<ul>
+<li><p><em>Variables to plot (columns of the heatmaps):</em> Subset of variables in ‘adata.var_names’</p>
+<ul>
+<li><p><em>List of variables to plot:</em> IL7R, CCR7, CD8A, CD14, LYZ, MS4A1, CD79A, GNLY, NKG7, KLRB1, FCER1A, CST3, PPBP, FCGR3A</p></li>
+</ul>
+</li>
+<li><p><em>The key of the observation grouping to consider:</em> louvain</p></li>
+<li><p><em>Number of categories:</em> 8</p></li>
+<li><p><em>Use the log of the values?:</em> No</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Compute and plot a dendrogram?:</em> Yes</p></li>
+<li><p><em>Group of variables to highlight</em></p>
+<ul>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>1: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 0</p></li>
+<li><p><em>End:</em> 1</p></li>
+<li><p><em>Label:</em> CD4+ T</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>2: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 2</p></li>
+<li><p><em>End:</em> 2</p></li>
+<li><p><em>Label:</em> CD8+</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>3: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 3</p></li>
+<li><p><em>End:</em> 4</p></li>
+<li><p><em>Label:</em> CD14+</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>4: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 5</p></li>
+<li><p><em>End:</em> 6</p></li>
+<li><p><em>Label:</em> B</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>5: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start</em>: 7</p></li>
+<li><p><em>End:</em> 9</p></li>
+<li><p><em>Label:</em> NK</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>6: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 10</p></li>
+<li><p><em>End:</em> 11</p></li>
+<li><p><em>Label:</em> Dendritic</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>7: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 12</p></li>
+<li><p>_End: _12</p></li>
+<li><p><em>Label:</em> Megakaryocytes</p></li>
+</ul>
+</li>
+<li><p>Seleccionar ícono [+ Insert Group of variables to highlight]</p></li>
+<li><p><em>8: Group of variables to highlight</em></p>
+<ul>
+<li><p><em>Start:</em> 13</p></li>
+<li><p><em>End:</em> 13</p></li>
+<li><p><em>Label:</em> FCGR3A+</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Custom figure size:</em> No: the figure width is set based on the number of variable names and the height is set to 10</p></li>
+<li><p><em>Color palette:</em> viridis (Perceptually Uniform Sequential)_ _</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 60: Expresión de marcadores en grupos de células anotados.</p></li>
+<li><p>_Rename dataset: _60: Expresión de marcadores en grupos de células anotados.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="marcadores.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Identificación de marcadores</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">55: Anotación de tipos celulares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-png">58: Gráfico: Agregar anotación de tipo celular a grupos de células (png)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-agregar-anotacion-de-tipo-celular-a-grupos-de-celulas-svg">59: Gráfico: Agregar anotación de tipo celular a grupos de células (svg)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-principales-genes-para-cada-tipo-celular">60: Gráfico: Expresión de principales genes para cada tipo celular</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LatinCells
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

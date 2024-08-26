@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reducción de dimensiones &#8212; Agrupacion</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dimensiones';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Identificación de marcadores" href="marcadores.html" />
+    <link rel="prev" title="Selección de características" href="caracteristicas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Agrupacion - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Agrupacion - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Análisis de secuenciación de RNA de célula única utilizando Galaxy
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Primeros Pasos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Introducción al Flujo de Trabajo en Galaxy</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preprocesamiento</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnnData.html">Creación de objeto AnnData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocesamiento.html">Preprocesamiento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qc.html">Selección y filtro de células y genes basado en métricas de calidad</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Filtrado de datos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="caracteristicas.html">Selección de características</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reducción de dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anotación</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="marcadores.html">Identificación de marcadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anotacion.html">Anotación de tipos celulares</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/dimensiones.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Reducción de dimensiones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-componentes-principales-pca">34: Análisis de componentes principales (PCA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-pca-general">35: Gráfico: PCA general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-ranking-de-genes-en-cada-pca">36: Gráfico: Ranking de genes en cada PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-influencia-de-genes-sobre-los-componentes-principales">37: Gráfico: Influencia de genes sobre los componentes principales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-variabilidad-explicada-por-n-componentes-principales">38: Gráfico: Variabilidad explicada por N componentes principales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-vecinos-cercanos-knn">39: Cálculo de vecinos cercanos (KNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduccion-de-dimensiones-generacion-de-umap">40: Reducción de dimensiones: Generación de UMAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-umap">41: Gráfico: UMAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupacion-de-vecinos">42: Agrupación de vecinos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-diferentes-umaps">43: Gráfico: diferentes UMAPS</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="reduccion-de-dimensiones">
+<h1>Reducción de dimensiones<a class="headerlink" href="#reduccion-de-dimensiones" title="Link to this heading">#</a></h1>
+<p>La reducción de dimensiones es necesaria para reducir el trabajo computacional, el ruido de la información, y para facilitar la representación gráfica de los datos. En los análisis de scRNA-seq se comparan las diferentes células en función de su expresión génica, por ejemplo, si usamos 2 genes para comparar las células, tendríamos un gráfico de dos dimensiones, en donde sólo habría dos puntos, uno por cada célula, y en cada eje estaría la expresión de cada gen.</p>
+<p>Para los sets de datos que se trabajan comúnmente en scRNA-seq, comúnmente se usan miles de genes para comparar las células entre sí, por lo que se trabajaría en un espacio de un alto número de dimensiones, pero el concepto se mantiene, cada célula será representada como un punto en el espacio multidimensional de acuerdo con su expresión génica.</p>
+<p>Dado a que los diferentes patrones de expresión génica pueden estar correlacionados si las células se ven en un contexto biológico similar (como, por ejemplo, formar parte de un tejido determinado, o un grupo celular determinado), podemos comprimir la información de varios genes en una sola dimensión.</p>
+<section id="analisis-de-componentes-principales-pca">
+<h2>34: Análisis de componentes principales (PCA)<a class="headerlink" href="#analisis-de-componentes-principales-pca" title="Link to this heading">#</a></h2>
+<p>PCA: análisis que agrupa las muestras en torno a dimensiones que capturan componentes que generan mayor variabilidad. En este caso, los componentes principales serían N genes que pertenezcan a un grupo y cuyo perfil de expresión explique la variabilidad entre diferentes grupos de células. Cada uno de estos conjuntos de genes explica en mayor o menor medida la variabilidad de la expresión génica entre los diferentes grupos de células, por lo que este análisis nos permitiría seleccionar los distintos grupos de genes que expliquen en mayor medida las diferencias de expresión génica entre los diferentes grupos de células.</p>
+<p>Utilizar la herramienta <strong>“Inspect and manipulate with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo – QC – norm – escalado).</p></li>
+<li><p>_Method used for plotting: _Computes PCA (principal component analysis) coordinates, loadings and variance decomposition, using ‘tl.pca’</p>
+<ul>
+<li><p>_Number of principal components to compute: _50</p></li>
+<li><p><em>Numpy data type string to which to convert the result:</em> float32</p>
+<ul>
+<li><p>_Type of PCA?: _Full PCA</p>
+<ul>
+<li><p>_Compute standard PCA from covariance matrix?: _Yes</p></li>
+<li><p>_“SVD solver to use”: _ARPACK wrapper in SciPy</p></li>
+<li><p>_Initial states for the optimization: _0</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo – QC – norm – escalado.</p></li>
+<li><p>_Rename dataset: _Archivo – QC – norm – esc - PCA.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-pca-general">
+<h2>35: Gráfico: PCA general<a class="headerlink" href="#grafico-pca-general" title="Link to this heading">#</a></h2>
+<p>En este gráfico podemos ver la distribución de las células (representadas como puntos individuales) en función de los componentes principales en los que se agruparon los genes de acuerdo a sus patrones de expresión. En el eje X e Y veremos dos componentes principales diferentes (PCA 1, PCA 2, PCA 3, etc). Los grupos de células que posean patrones de expresión similares en genes agrupados en cada componente principal se agruparán en el gráfico. De la misma forma, al graficar PCA 1 vs PCA 2, y luego PCA 2 vs PCA 3, los grupos de células que se formen podrían cambiar, ya que cambiaron los grupos de genes, ya que estos no se repiten entre el PCA 1, PCA 2, y PCA 3.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul>
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo – QC – norm – esc - PCA).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> PCA:_ _Plot PCA results, using ‘pl.pca_overview’</p>
+<ul>
+<li><p><em>Sort order?:</em> Yes</p></li>
+<li><p><em>Plot attributes:</em></p>
+<ul>
+<li><p><em>Component:</em></p>
+<ul class="simple">
+<li><p>Presionar el ícono [+ Insert Component]</p></li>
+<li><p>*<strong>Solo fuera del espacio de Flujo de Trabajo: <em>Click on param-repeat Insert Component</em></strong></p></li>
+<li><p><em>1: Component:</em></p>
+<ul>
+<li><p>_X-axis: _1</p></li>
+<li><p>_Y-axis: _2</p></li>
+</ul>
+</li>
+<li><p>*<strong>Solo fuera del espacio de Flujo de Trabajo: <em>Click on param-repeat Insert Component</em></strong></p></li>
+<li><p>Presionar el ícono [+ Insert Component]</p></li>
+<li><p><em>2: Component:</em></p>
+<ul>
+<li><p><em>X-axis:</em> 2</p></li>
+<li><p>_Y-axis: _3</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Projection of plot:</em> 2d</p></li>
+<li><p>_Location of legend: _right margin</p></li>
+<li><p>_Legent font weight: _normal</p></li>
+<li><p>_Draw a frame around the scatter plot?: _Yes</p></li>
+<li><p>_Number of panels per row: _2</p></li>
+<li><p>_Width of the space between multiple panels: _0.1</p></li>
+<li><p>_Height of the space between multiple panels: _0.25</p>
+<p>*<strong>Algunas de estas configuraciones son exclusivas del espacio de Flujo de Trabajo.</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul class="simple">
+<li><p><em>Label:</em> 35: PCA general.</p></li>
+<li><p>_Rename dataset: _35: PCA general.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-ranking-de-genes-en-cada-pca">
+<h2>36: Gráfico: Ranking de genes en cada PCA<a class="headerlink" href="#grafico-ranking-de-genes-en-cada-pca" title="Link to this heading">#</a></h2>
+<p>En este gráfico se seleccionan los genes expresados dentro de cada componente principal para identificar los genes que más contribuyen a la variación atribuida al componente al que pertenecen.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo – QC – norm – esc - PCA).</p></li>
+<li><p><em>Format for saving figures:</em> png</p>
+<ul>
+<li><p>_Method used for plotting: _PCA: Rank genes according to contributions to PCs, using ‘pl.pca_loadings’</p>
+<ul>
+<li><p>_List of comma-sepparated components: _1,2,3</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 36: Ranking de genes en cada PCA.</p></li>
+<li><p>_Rename dataset: _36: Ranking de genes en cada PCA.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-influencia-de-genes-sobre-los-componentes-principales">
+<h2>37: Gráfico: Influencia de genes sobre los componentes principales<a class="headerlink" href="#grafico-influencia-de-genes-sobre-los-componentes-principales" title="Link to this heading">#</a></h2>
+<p>En este gráfico se seleccionan los genes que mayor variación generan dentro de cada componente (paso 36). De esta forma se puede corroborar que dichos genes representarían la variabilidad de cada componente principal del que fueron extraídos. En este caso, se escogieron los genes de mayor relevancia en el PCA 1, PCA 2, y PCA 3, siendo CST3, NKG7, y PPBP, respectivamente.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul>
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo – QC – norm – esc - PCA).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> PCA: Plot PCA results, using ‘pl.pca_overview’</p>
+<ul>
+<li><p><em>Keys for annotations of obsercations/cells or variables/genes:</em> CST3, NKG7, PPBP</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present?:</em> No</p></li>
+<li><p>_Sort order?: _Yes</p></li>
+<li><p><em>Plot attributes:</em></p>
+<ul>
+<li><p><em>Component:</em></p>
+<ul class="simple">
+<li><p>Presionar el ícono [+ Insert Component]</p></li>
+<li><p>*<strong>Solo fuera del espacio de Flujo de Trabajo: <em>Click on param-repeat Insert Component</em></strong></p></li>
+<li><p><em>1: Component:</em></p>
+<ul>
+<li><p>_X-axis: _1</p></li>
+<li><p>_Y-axis: _2</p></li>
+</ul>
+</li>
+<li><p>*<strong>Solo fuera del espacio de Flujo de Trabajo: <em>Click on param-repeat Insert Component</em></strong></p></li>
+<li><p>Presionar el ícono [+ Insert Component]</p></li>
+<li><p><em>2: Component:</em></p>
+<ul>
+<li><p><em>X-axis:</em> 2</p></li>
+<li><p>_Y-axis: _3</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Projection of plot:</em> 2d</p></li>
+<li><p>_Location of legend: _right margin</p></li>
+<li><p>_Legent font weight: _normal</p></li>
+<li><p>_Draw a frame around the scatter plot?: _Yes</p></li>
+<li><p>_Number of panels per row: _2</p></li>
+<li><p>_Width of the space between multiple panels: _0.1</p></li>
+<li><p>_Height of the space between multiple panels: _025</p>
+<p>*<strong>Algunas de estas configuraciones son exclusivas del espacio de Flujo de Trabajo.</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul class="simple">
+<li><p><em>Label:</em> 37: PCAs por gen.</p></li>
+<li><p>_Rename dataset: _37: PCAs por gen.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-variabilidad-explicada-por-n-componentes-principales">
+<h2>38: Gráfico: Variabilidad explicada por N componentes principales<a class="headerlink" href="#grafico-variabilidad-explicada-por-n-componentes-principales" title="Link to this heading">#</a></h2>
+<p>En este gráfico se puede observar cuántos componentes principales explican la mayor variabilidad de expresión génica entre los diferentes grupos de células.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo – QC – norm – esc - PCA).</p></li>
+<li><p><em>Format for saving figures:</em> png</p>
+<ul>
+<li><p>_Method used for plotting: _PCA: PCA: Scatter plot in PCA coordinates, using ‘pl.pca_variance_ratio’</p>
+<ul>
+<li><p>_Number of PCs to show: _30</p></li>
+<li><p><em>Use the log of the values?:</em> Yes</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 38: Variabilidad por cada PCA.</p></li>
+<li><p>_Rename dataset: _38: Variabilidad por cada PCA.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="calculo-de-vecinos-cercanos-knn">
+<h2>39: Cálculo de vecinos cercanos (KNN)<a class="headerlink" href="#calculo-de-vecinos-cercanos-knn" title="Link to this heading">#</a></h2>
+<p>En este paso se usa el método de K-nearest neighbors (KNN). Este método se encarga de agrupar las células con perfiles de expresión similares para así identificar diferentes poblaciones celulares dentro del análisis. Para este análisis se debe decidir cuántos vecinos son considerados para este cálculo (valor de k), por ejemplo, el perfil de expresión de una célula se comparará en general con todas las células, de este resultado, se tomarán las 3 células más similares a la célula evaluada y se irán agrupando para formar grupos más grandes. Cuando el análisis ya está en etapas más avanzadas y existen grupos formados, entonces la célula comparada será asignada al grupo con el que tenga más vecinos cercanos, por ejemplo, si dos vecinos son de la población A, y sólo un vecino pertenece a la población B, dicha célula será asignada al grupo A.</p>
+<p>Utilizar la herramienta <strong>“Inspect and Manipulate with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo – QC – norm – esc - PCA).</p></li>
+<li><p><em>Method used for inspecting:</em> Compute a neighborhood graph of observations, using ‘pp.neighbors’</p>
+<ul>
+<li><p><em>The size of local neighborhood (in terms of number of neighboring data points) used for manifold approximation</em>: 10</p></li>
+<li><p><em>Number of PCs to use:</em> 10</p></li>
+<li><p><em>Use a hard threshold to restrict the number of neighbors to n_neighbors?:</em> Yes</p></li>
+<li><p><em>Numpy random seed:</em> 0</p></li>
+<li><p><em>Method for computing connectivities:</em> umap (McInnes et al, 2018)</p></li>
+<li><p><em>Distance metric:</em> euclidean</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘anndata_out’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo PCA - KNN.</p></li>
+<li><p>_Rename dataset: _Archivo PCA - KNN.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reduccion-de-dimensiones-generacion-de-umap">
+<h2>40: Reducción de dimensiones: Generación de UMAP<a class="headerlink" href="#reduccion-de-dimensiones-generacion-de-umap" title="Link to this heading">#</a></h2>
+<p>En este paso se realiza una reducción dimensional, ya que el KNN genera relaciones multidimensionales y esto no es sencillo de visualizar. Para esto se escoge la técnica de UMAP, que se caracteriza por una mejor conservación de relaciones al disminuir las dimensiones de la agrupación por KNN.</p>
+<p>Utilizar la herramienta <strong>“Cluster, infer trajectories and embed with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo PCA - KNN).</p></li>
+<li><p><em>Method used:</em> Embed the neighborhood graph using UMAP, using ‘tl.umap’</p>
+<ul>
+<li><p><em>Effective minimum distance between embedded points:</em> 0.5</p></li>
+<li><p>_Effective scale of embedded points: _1.0</p></li>
+<li><p><em>Number of dimensions of the embedding:</em> 2</p></li>
+<li><p><em>Initial learning rate for the embedding optimization:</em> 1.0</p></li>
+<li><p><em>Weighting applier to negative samples in low dimensional embedding optimization:</em> 1.0</p></li>
+<li><p>_The number of negative edge/1-simplex samples to use per positive edge/1-simplex sample in optimizing the low dimensional embedding: _5</p></li>
+<li><p><em>How to initialize the low dimensional embedding:</em> Spectral embedding of the graph</p></li>
+<li><p><em>Random state:</em> 0</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘anndata_out’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo PCA – KNN - UMAP.</p></li>
+<li><p>_Rename dataset: _Archivo PCA – KNN - UMAP.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-umap">
+<h2>41: Gráfico: UMAP<a class="headerlink" href="#grafico-umap" title="Link to this heading">#</a></h2>
+<p>Representación gráfica de la agrupación de grupos de células generado anteriormente. En este caso se utilizan los genes relevantes designados en el paso 37, en la sección [‘Tool Parameters’/’Keys for annotations of observations/cells or variables/genes’].</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo PCA – KNN - UMAP).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Embeddings: Scatter plot in UMAP basis, using ‘pl.umap’</p>
+<ul>
+<li><p><em>Keys for annotations of observations/cells or variables/genes:</em> CST3, NKG7, PPBP</p></li>
+<li><p>_Use ‘raw’ attribute of input if present?: _No</p></li>
+<li><p><em>Show edges?:</em> No</p></li>
+<li><p><em>Show arrows?:</em> No</p></li>
+<li><p><em>Sort order?:</em> Yes</p></li>
+<li><p><em>Plot attributes:</em></p>
+<ul>
+<li><p><em>Projection of plot:</em> 2d</p></li>
+<li><p><em>Location of legend:</em> right margin</p></li>
+<li><p><em>Legend font weight:</em> normal</p></li>
+<li><p><em>Draw a frame around the scatter plot?:</em> Yes</p></li>
+<li><p><em>Number of panels per row:</em> 4</p></li>
+<li><p><em>Width of the space between multiple panels:</em> 0.1</p></li>
+<li><p><em>Height of the space between multiple panels:</em> 0.25</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Number of panels per row:</em> 2_ _</p></li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 41: gráfico UMAP.</p></li>
+<li><p>_Rename dataset: _41: gráfico UMAP.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="agrupacion-de-vecinos">
+<h2>42: Agrupación de vecinos<a class="headerlink" href="#agrupacion-de-vecinos" title="Link to this heading">#</a></h2>
+<p>En este paso se realizará la agrupación de las células vecinas, permitiendo ver las diferentes comunidades resultantes del análisis. Para esto se pueden utilizar tres métodos, SML, algoritmo Louvain, o el algoritmo Leiden. En este Flujo de Trabajo se sigue la recomendación de la fuente directa que lo generó, utilizando el algoritmo Louvain.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo PCA – KNN - UMAP).</p></li>
+<li><p><em>Method used for plotting:</em> Cluster cells into subgroups, using ‘tl.louvain’</p>
+<ul>
+<li><p><em>Flavor for the clustering:</em> vtraag (much more powerful)</p>
+<ul>
+<li><p><em>Resolution:</em> 0.45</p></li>
+</ul>
+</li>
+<li><p>_Random state: _0</p></li>
+<li><p><em>Key under which to add the cluster labels:</em> Louvain</p></li>
+<li><p>_Interpret the adjacency matrix as directed graph?: _Yes</p></li>
+<li><p>_Use weights from knn graph?: _No</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘anndata_out’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo PCA – KNN – UMAP - agrupado.</p></li>
+<li><p>_Rename dataset: _Archivo PCA – KNN – UMAP - agrupado.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-diferentes-umaps">
+<h2>43: Gráfico: diferentes UMAPS<a class="headerlink" href="#grafico-diferentes-umaps" title="Link to this heading">#</a></h2>
+<p>En este paso se grafican los UMAPS de los tres genes de interés seleccionados en el paso 37, además del UMAP agrupado que se generó en el paso 42.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo PCA – KNN – UMAP - agrupado).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Embeddings: Scatter plot in UMAP basis, using ‘pl.umap’</p>
+<ul>
+<li><p><em>Keys for annotations of observations/cells or variables/genes</em>: louvain, CST3, NKG7, PPBP</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present</em>: No</p>
+<ul>
+<li><p><em>Show edges?:</em> No</p></li>
+</ul>
+</li>
+<li><p>_Show arrows?: _No</p></li>
+<li><p>_Sort order?: _Yes</p></li>
+<li><p><em>Plot attributes:</em></p>
+<ul>
+<li><p><em>Projection of plot: 2d</em></p></li>
+<li><p><em>Location of legend:</em> right margin</p></li>
+<li><p><em>Legend font weight:</em> normal</p></li>
+<li><p><em>Draw a frame around the scatter plot?:</em> Yes</p></li>
+<li><p><em>Number of panels per row:</em> 2</p></li>
+<li><p><em>Width of the space between multiple panels:</em> 0.1</p></li>
+<li><p><em>Height of the space between multiple panels:</em> 0.25</p></li>
+<li><p><em>Number of panels per row:</em> 2</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 43: UMAP agrupado - UMAP genes.</p></li>
+<li><p>_Rename dataset: _43: UMAP agrupado - UMAP genes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="caracteristicas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Selección de características</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="marcadores.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Identificación de marcadores</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-componentes-principales-pca">34: Análisis de componentes principales (PCA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-pca-general">35: Gráfico: PCA general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-ranking-de-genes-en-cada-pca">36: Gráfico: Ranking de genes en cada PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-influencia-de-genes-sobre-los-componentes-principales">37: Gráfico: Influencia de genes sobre los componentes principales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-variabilidad-explicada-por-n-componentes-principales">38: Gráfico: Variabilidad explicada por N componentes principales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-vecinos-cercanos-knn">39: Cálculo de vecinos cercanos (KNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduccion-de-dimensiones-generacion-de-umap">40: Reducción de dimensiones: Generación de UMAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-umap">41: Gráfico: UMAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupacion-de-vecinos">42: Agrupación de vecinos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-diferentes-umaps">43: Gráfico: diferentes UMAPS</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LatinCells
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
