@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Identificación de marcadores &#8212; Agrupacion</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'marcadores';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Anotación de tipos celulares" href="anotacion.html" />
+    <link rel="prev" title="Reducción de dimensiones" href="dimensiones.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Agrupacion - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Agrupacion - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Análisis de secuenciación de RNA de célula única utilizando Galaxy
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Primeros Pasos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Introducción al Flujo de Trabajo en Galaxy</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preprocesamiento</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnnData.html">Creación de objeto AnnData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocesamiento.html">Preprocesamiento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qc.html">Selección y filtro de células y genes basado en métricas de calidad</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Filtrado de datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="caracteristicas.html">Selección de características</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensiones.html">Reducción de dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anotación</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Identificación de marcadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anotacion.html">Anotación de tipos celulares</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/marcadores.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Identificación de marcadores</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-marcadores-t-test">44: Identificación de marcadores (t-test)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-marcadores-wilcoxon">45: Identificación de marcadores (Wilcoxon)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-t-test">46: Gráfico: Genes con mayor influencia en cada grupo de células (t-test)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-con-mayor-influencia-t-test">47: Genes con mayor influencia (t-test)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-wilcoxon">48: Gráfico: Genes con mayor influencia en cada grupo de células (Wilcoxon)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-n-marcadores-en-cada-grupo-violin">49: Gráfico: Expresión de N marcadores en cada grupo (violín)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-n-marcadores-en-cada-grupo-mapa-de-vecinos">50: Gráfico: Expresión de N marcadores en cada grupo (mapa de vecinos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-los-top-n-marcadores-en-celulas-de-cada-grupo-heatmap">51: Gráfico: Expresión de los top N marcadores en células de cada grupo (heatmap)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-con-mayor-influencia-wilcoxon">52: Genes con mayor influencia (Wilcoxon)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-la-expresion-de-marcadores">53: Comparación de la expresión de marcadores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-marcadores-entre-dos-grupos">54: Identificación de marcadores entre dos grupos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-ranking-de-genes-que-distinguen-al-grupo-0-del-grupo-1">56: Gráfico: Ranking de genes que distinguen al grupo 0 del grupo 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-diferencia-de-expresion-de-genes-marcadores-que-distinguen-al-grupo-0-del-grupo-1">57: Gráfico: Diferencia de expresión de genes marcadores que distinguen al grupo 0 del grupo 1</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="identificacion-de-marcadores">
+<h1>Identificación de marcadores<a class="headerlink" href="#identificacion-de-marcadores" title="Link to this heading">#</a></h1>
+<section id="identificacion-de-marcadores-t-test">
+<h2>44: Identificación de marcadores (t-test)<a class="headerlink" href="#identificacion-de-marcadores-t-test" title="Link to this heading">#</a></h2>
+<p>Se usará el análisis de t-test como método para encontrar los genes diferencialmente expresados que sean relevantes entre los diferentes grupos de células obtenidos previamente.</p>
+<p>Utilizar la herramienta <strong>“Inspect and manipulate with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo PCA – KNN – UMAP - agrupado).</p></li>
+<li><p><em>Method used for inspecting:</em> Rank genes for characterizing groups, using ‘tl.rank_genes_groups’</p>
+<ul>
+<li><p><em>The key of the observations grouping to consider:</em> louvain</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present</em>: Yes</p></li>
+<li><p><em>Comparison:</em> Compare each group to the union of the rest of the group</p></li>
+<li><p><em>The number of genes that appear in the returned tables:</em> 100</p>
+<ul>
+<li><p><em>Method:</em> t-test</p></li>
+<li><p><em>P-value correction method:</em> Benjamini-Hochberg</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘anndata_out’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo UMAP agrupado – t-test.</p></li>
+<li><p>_Rename dataset: _Archivo UMAP – agr – t-test.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="identificacion-de-marcadores-wilcoxon">
+<h2>45: Identificación de marcadores (Wilcoxon)<a class="headerlink" href="#identificacion-de-marcadores-wilcoxon" title="Link to this heading">#</a></h2>
+<p>Este paso es una alternativa al paso 44, ocupando otro método en lugar del t-test. El método de Wilcoxon es recomendable para usar en publicaciones, y se basa en evaluar la separación entre la distribución de expresión de genes de los diferentes grupos.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo PCA – KNN – UMAP - agrupado).</p></li>
+<li><p><em>Method used for inspecting:</em> Rank genes for characterizing groups, using ‘tl.rank_genes_groups’</p>
+<ul>
+<li><p><em>The key of the observations grouping to consider:</em> louvain</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Comparison:</em> Compare each group to the union of the rest of the group</p></li>
+<li><p><em>The number of genes that appear in the returned tables:</em> 100</p>
+<ul>
+<li><p><em>Method:</em> Wilcoxon-Rank-Sum</p></li>
+<li><p><em>P-value correction method:</em> Benjamini-Hochberg</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘anndata_out’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo UMAP agrupado – wilc.</p></li>
+<li><p>_Rename dataset: _Archivo UMAP agrupado – wilc.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-t-test">
+<h2>46: Gráfico: Genes con mayor influencia en cada grupo de células (t-test)<a class="headerlink" href="#grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-t-test" title="Link to this heading">#</a></h2>
+<p>Este gráfico coloca a los genes en el eje X identificados con un número, este número representaría únicamente un gen, no es un valor que tomar en cuenta; la abreviación de cada gen se grafica encuentra perpendicular a su ubicación en el eje X, a la altura de su valor en el eje Y. En el eje Y se grafica el score de los genes, el cual representa la influencia de este gen en cada grupo de genes formado en los análisis anteriores.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – t-test).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Marker genes: Plot ranking of genes using dotplot plot, using ‘pl.rank_genes_groups’</p>
+<ul>
+<li><p><em>Number of genes to show:</em> 20</p></li>
+<li><p><em>Font size for gene names:</em> 8</p></li>
+<li><p>_Number of panels per row: _3</p></li>
+<li><p>_Should the y-axis of each panels be shared?: _No (colocar esta opción en ‘Yes’ hará que el eje Y tenga el mismo rango de valores entre todos los gráficos)</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 46: Principales genes en cada grupo (t-test).</p></li>
+<li><p>_Rename dataset: _46: Principales genes en cada grupo (t-test).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="genes-con-mayor-influencia-t-test">
+<h2>47: Genes con mayor influencia (t-test)<a class="headerlink" href="#genes-con-mayor-influencia-t-test" title="Link to this heading">#</a></h2>
+<p>En este paso se identifican los genes con mayor influencia en cada grupo de genes previamente obtenido mediante el uso de los datos de UMAP. Esta información se entrega como tabla, complementaria al gráfico del paso 46.</p>
+<p>En este módulo se pueden seleccionar la información que tendrá el output, en donde podemos escoger:</p>
+<ul class="simple">
+<li><p>Los nombres de genes en cada grupo (uns_rank_genes_groups_names)</p></li>
+<li><p>El score de genes en cada grupo (uns_rank_genes_groups_scores)</p></li>
+<li><p>Las veces de cambio de genes en cada grupo (uns_rank_genes_groups_logfoldchanges)</p></li>
+<li><p>El p-value de genes en cada grupo (uns_rank_genes_groups_pvals)</p></li>
+<li><p>El p-value ajustado de genes en cada grupo (uns_rank_genes_groups_pvals_adj).</p></li>
+</ul>
+<p>Utilizar la herramienta <strong>“Inspect AnnData object”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’input’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – t-test).</p></li>
+<li><p><em>What to inspect?:</em> Unstructured annotation (uns)</p>
+<ul>
+<li><p><em>What to inspect in uns?:</em> Rank gene groups (rank_genes_groups)</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_names’:</em></p>
+<ul>
+<li><p><em>Label:</em> 47: Ranking de genes por nombre (t-test).</p></li>
+<li><p>_Rename dataset: _47: Ranking de genes por nombre (t-test).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_scores’:</em></p>
+<ul>
+<li><p><em>Label:</em> 47: Ranking de genes por score (t-test).</p></li>
+<li><p>_Rename dataset: _47: Ranking de genes por score (t-test).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: uns_rank_genes_groups</em> logfoldchanges‘’:_</p>
+<ul>
+<li><p><em>Label:</em> 47: Ranking de genes por expresión (t-test).</p></li>
+<li><p>_Rename dataset: _47: Ranking de genes por expresión (t-test).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_pvals’:</em></p>
+<ul>
+<li><p><em>Label:</em> 47: Ranking de genes por p-value (t-test).</p></li>
+<li><p>_Rename dataset: _47: Ranking de genes por p-value (t-test).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_pavals_adj’:</em></p>
+<ul>
+<li><p><em>Label:</em> 47: Ranking de genes por p-value ajustado (t-test).</p></li>
+<li><p>_Rename dataset: _47: Ranking de genes por p-value ajustado (t-test).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-wilcoxon">
+<h2>48: Gráfico: Genes con mayor influencia en cada grupo de células (Wilcoxon)<a class="headerlink" href="#grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-wilcoxon" title="Link to this heading">#</a></h2>
+<p>Este gráfico coloca a los genes en el eje X identificados con un número, este número representaría únicamente un gen, no es un valor que tomar en cuenta; la abreviación de cada gen se grafica encuentra perpendicular a su ubicación en el eje X, a la altura de su valor en el eje Y. En el eje Y se grafica el score de los genes, el cual representa la influencia de este gen en cada grupo de genes formado en los análisis anteriores.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Marker genes: Plot ranking of genes using dotplot plot, using ‘pl.rank_genes_groups’</p>
+<ul>
+<li><p><em>Number of genes to show:</em> 20</p></li>
+<li><p><em>Font size for gene names:</em> 8</p></li>
+<li><p>_Number of panels per row: _3</p></li>
+<li><p>_Should the y-axis of each panels be shared?: _No (colocar esta opción en ‘Yes’ hará que el eje Y tenga el mismo rango de valores entre todos los gráficos)</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 48: Principales genes en cada grupo (Wilcoxon).</p></li>
+<li><p>_Rename dataset: _48: Principales genes en cada grupo (Wilcoxon).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-expresion-de-n-marcadores-en-cada-grupo-violin">
+<h2>49: Gráfico: Expresión de N marcadores en cada grupo (violín)<a class="headerlink" href="#grafico-expresion-de-n-marcadores-en-cada-grupo-violin" title="Link to this heading">#</a></h2>
+<p>Se analiza la expresión de los marcadores más relevantes encontrados, en este caso 8 (Se ajusta la cantidad de filas que representan la expresión de N marcadores en: ‘Method used for plotting/Number of categories: 8’). Para este gráfico se seleccionaron los 8 marcadores utilizando la información entregada en el paso 47, la tabla 47: Ranking de genes por nombre (t-test), seleccionando el primer gen de cada grupo, estos deben estar escirtos en ‘Method used for plotting/Variables to plot/ List of variables to plot: [nombre de los genes separados con coma]’.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting: Generic:</em> Stacked violin plot, using ‘pl.stacked_violin’</p>
+<ul>
+<li><p><em>Variables to plot (columns of the heatmaps):</em> Subset of variables in ‘adata.var_names’</p>
+<ul>
+<li><p><em>List of variables to plot:</em> LDHB, LYZ, CD74, CCL5, LST1, NKG7, HLA-DPA1, PF4</p></li>
+</ul>
+</li>
+<li><p><em>The key of the observation grouping to consider:</em> louvain</p></li>
+<li><p><em>Number of categories:</em> 8</p></li>
+<li><p><em>Use the log of the values?:</em> No</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Compute and plot dendogram?:</em> No</p></li>
+<li><p><em>Custom figure size:</em> Yes</p>
+<ul>
+<li><p><em>Figure width:</em> 10</p></li>
+<li><p><em>Figure height:</em> 10</p></li>
+</ul>
+</li>
+<li><p><em>Swap axes?:</em> Yes</p></li>
+<li><p><em>Violin plot attributes:</em></p>
+<ul>
+<li><p><em>Add a stripplot on top of the violin plot:</em> Yes (se puede cambiar a ‘No’, esto agrega un gráfico de dispersión, en donde cada punto refleja un valor de expresión de cada célula)</p>
+<ul>
+<li><p><em>Add jutter to the stripplot:</em> Yes</p></li>
+<li><p><em>Size of the jitter points:</em> 1.0</p></li>
+</ul>
+</li>
+<li><p><em>Method used to scale the width of each violin:</em> width: each violin will have the same width</p></li>
+</ul>
+</li>
+<li><p>_Colors to use in each of the stacked violin plots: _muted</p></li>
+<li><p>_Standardize a dimension between 0 and 1: _No standardization</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 49: Expresión de N marcadores en cada grupo (violín).</p></li>
+<li><p>_Rename dataset: _49: Expresión de N marcadores en cada grupo (violín).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-expresion-de-n-marcadores-en-cada-grupo-mapa-de-vecinos">
+<h2>50: Gráfico: Expresión de N marcadores en cada grupo (mapa de vecinos)<a class="headerlink" href="#grafico-expresion-de-n-marcadores-en-cada-grupo-mapa-de-vecinos" title="Link to this heading">#</a></h2>
+<p>Este gráfico es una alternativa complementaria al gráfico generado en el paso 49. Nos permite observar los diferentes grupos de células, incluyendo un gráfico general (louvain) en donde se muestra la expresión de los 8 marcadores con los que trabajamos en el paso 49, además de un gráfico para cada marcador en donde el coloreado de cada punto, representaría la expresión de ese gen en cada célula. Este gráfico es similar al obtenido en el paso 43.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p>_Method used for plotting: _Embeddings: Scatter plot in UMAP basis, using ‘pl.umap’</p>
+<ul>
+<li><p>_Keys for annotations of observations/cells or variables/genes: _louvain, <em>LDHB, LYZ, CD74, CCL5, LST1, NKG7, HLA-DPA1, PF4</em></p></li>
+<li><p>_Use ‘raw’ attribute of input if present: _Yes</p></li>
+<li><p>_Show edges?: _No</p></li>
+<li><p>_Show arrows?: _No</p></li>
+<li><p><em>Sort order?:</em> Yes</p></li>
+<li><p><em>Plot attributes</em></p>
+<ul>
+<li><p><em>Projection of plot:</em> 2d</p></li>
+<li><p>_Location of legend: _right margin</p></li>
+<li><p><em>Legend font weight: normal</em></p></li>
+<li><p>_Draw a frame around the scatter plot?: _Yes</p></li>
+<li><p><em>Number of panels per row:</em> 2</p></li>
+<li><p><em>Width of the space between multiple panels:</em> 0.1</p></li>
+<li><p><em>Heigh of the space between multiple panels:</em> 0.25</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 50: Expresión de N marcadores en cada grupo (UMAP).</p></li>
+<li><p>_Rename dataset: _50: Expresión de N marcadores en cada grupo (UMAP).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-expresion-de-los-top-n-marcadores-en-celulas-de-cada-grupo-heatmap">
+<h2>51: Gráfico: Expresión de los top N marcadores en células de cada grupo (heatmap)<a class="headerlink" href="#grafico-expresion-de-los-top-n-marcadores-en-celulas-de-cada-grupo-heatmap" title="Link to this heading">#</a></h2>
+<p>N = 20, se puede cambiar en ‘Method used for plotting/Number of genes to show: 20’. Muestra el top N para cada grupo de células.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Marker genes: Plot ranking of genes as heatmap plot, using ‘pl.rank_genes_groups_heatmap’</p>
+<ul>
+<li><p><em>Number of genes to show:</em> 20</p></li>
+<li><p>_Use the log of the values?: _No</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Compute and plot a dendrogram?:</em> Yes</p></li>
+<li><p><em>Custom figure size:</em> No: the figure width is set based on the number of variable names and the height is set to 10</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 51: Heatmap top N genes</p></li>
+<li><p>_Rename dataset: _51: Heatmap top N genes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="genes-con-mayor-influencia-wilcoxon">
+<h2>52: Genes con mayor influencia (Wilcoxon)<a class="headerlink" href="#genes-con-mayor-influencia-wilcoxon" title="Link to this heading">#</a></h2>
+<p>En este paso se identifican los genes con mayor influencia en cada grupo de genes previamente obtenido mediante el uso de los datos de UMAP. Esta información se entrega como tabla, complementaria al gráfico del paso 48.</p>
+<p>En este módulo se pueden seleccionar la información que tendrá el output, en donde podemos escoger:</p>
+<ul class="simple">
+<li><p>Los nombres de genes en cada grupo (uns_rank_genes_groups_names)</p></li>
+<li><p>El score de genes en cada grupo (uns_rank_genes_groups_scores)</p></li>
+<li><p>Las veces de cambio de genes en cada grupo (uns_rank_genes_groups_logfoldchanges)</p></li>
+<li><p>El p-value de genes en cada grupo (uns_rank_genes_groups_pvals)</p></li>
+<li><p>El p-value ajustado de genes en cada grupo (uns_rank_genes_groups_pvals_adj).</p></li>
+</ul>
+<p>Utilizar la herramienta <strong>“Inspect AnnData object”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’input’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>What to inspect?:</em> Unstructured annotation (uns)</p>
+<ul>
+<li><p><em>What to inspect in uns?:</em> Rank gene groups (rank_genes_groups)</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_names’:</em></p>
+<ul>
+<li><p><em>Label:</em> 52: Ranking de genes por nombre (Wilcoxon).</p></li>
+<li><p>_Rename dataset: _52: Ranking de genes por nombre (Wilcoxon).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_scores’:</em></p>
+<ul>
+<li><p><em>Label:</em> 52: Ranking de genes por score (Wilcoxon).</p></li>
+<li><p>_Rename dataset: _52: Ranking de genes por score (Wilcoxon).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: uns_rank_genes_groups</em> logfoldchanges‘’:_</p>
+<ul>
+<li><p><em>Label:</em> 52: Ranking de genes por expresión (Wilcoxon).</p></li>
+<li><p>_Rename dataset: _52: Ranking de genes por expresión (Wilcoxon).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_pvals’:</em></p>
+<ul>
+<li><p><em>Label:</em> 52: Ranking de genes por p-value (Wilcoxon).</p></li>
+<li><p>_Rename dataset: _52: Ranking de genes por p-value (Wilcoxon).</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘uns_rank_genes_groups_pavals_adj’:</em></p>
+<ul>
+<li><p><em>Label:</em> 52: Ranking de genes por p-value ajustado (Wilcoxon).</p></li>
+<li><p>_Rename dataset: _52: Ranking de genes por p-value ajustado (Wilcoxon).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="comparacion-de-la-expresion-de-marcadores">
+<h2>53: Comparación de la expresión de marcadores<a class="headerlink" href="#comparacion-de-la-expresion-de-marcadores" title="Link to this heading">#</a></h2>
+<p>Se compara la expresión de los tres marcadores anteriormente seleccionados en el paso 37, aquellos que presentaban mayor influencia en los componentes principales para cada grupo de células.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Generic: Violin plot, using ‘pl.violin’</p>
+<ul>
+<li><p><em>Keys for accessing variables:</em> Subset of variables in ‘adata.var_names’ or fields in ‘.obs’</p>
+<ul>
+<li><p><em>Keys for accessing variables:</em> CST3, NKG7, PPBP</p></li>
+</ul>
+</li>
+<li><p><em>The key of the observation grouping to consider:</em> Louvain</p></li>
+<li><p>_Use the log of the values?: _No</p></li>
+<li><p><em>Use the ‘raw’ attribute of input if present:</em> Yes</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 53: Comparación de expresión de marcadores entre grupos.</p></li>
+<li><p>_Rename dataset: _53: Comparación de expresión de marcadores entre grupos.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="identificacion-de-marcadores-entre-dos-grupos">
+<h2>54: Identificación de marcadores entre dos grupos<a class="headerlink" href="#identificacion-de-marcadores-entre-dos-grupos" title="Link to this heading">#</a></h2>
+<p>Comparación entre un número determinado de grupos, se pueden seleccionar en ‘Subset of groups which comparison shall be restricted:0’ (grupo 0), y ‘Comparioson/Group identifier with respecto to which compare: 1’ (grupo 1).</p>
+<p>Utilizar la herramienta <strong>“Inspect and manipulate with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc).</p></li>
+<li><p>_Method used for inspecting: _Rank genes for characterizing groups, using ‘tl.rank_genes_groups’</p>
+<ul>
+<li><p>_The key of the observations grouping to consider: _louvain</p></li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p>_Subset of groups to which comparison shall be restricted: _0</p></li>
+<li><p>_Comparison: _Compare with respect to a specific group</p>
+<ul>
+<li><p>_Group identifier with respect to which compare: _1</p></li>
+</ul>
+</li>
+<li><p>_The number of genes that appear in the returned tables: _100</p></li>
+<li><p>_Method: _Wilcoxon-Rank-Sum</p>
+<ul>
+<li><p>_P-value correction method: _Benjamini-Hochberg</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> Archivo UMAP agrupado – wilc – grupo 0 vs 1.</p></li>
+<li><p>_Rename dataset: _Archivo UMAP agrupado – wilc – grupo 0 vs 1.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-ranking-de-genes-que-distinguen-al-grupo-0-del-grupo-1">
+<h2>56: Gráfico: Ranking de genes que distinguen al grupo 0 del grupo 1<a class="headerlink" href="#grafico-ranking-de-genes-que-distinguen-al-grupo-0-del-grupo-1" title="Link to this heading">#</a></h2>
+<p>En este gráfico se da un score a qué tan diferente es la expresión entre el grupo 0 con respecto al grupo 1. En el eje X nuevamente, el valor numérico es sólo un indicativo de la posición del gen en el gráfico y no debe interpretarse.</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc – grupo 0 vs 1).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Marker genes: Plot ranking of genes using dotplot plot, using ‘pl.rank_genes_groups’</p>
+<ul>
+<li><p><em>Number of genes to show:</em> 20</p></li>
+<li><p><em>Should the y-axis of each panels be shared?:</em> No</p></li>
+<li><p><em>Font size for gene names:</em> 8</p></li>
+<li><p>_Number of panels per row: _3</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 56: Gráfico: Ranking de genes que distinguen al grupo 0 del grupo 1.</p></li>
+<li><p>_Rename dataset: _56: Gráfico: Ranking de genes que distinguen al grupo 0 del grupo 1.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grafico-diferencia-de-expresion-de-genes-marcadores-que-distinguen-al-grupo-0-del-grupo-1">
+<h2>57: Gráfico: Diferencia de expresión de genes marcadores que distinguen al grupo 0 del grupo 1<a class="headerlink" href="#grafico-diferencia-de-expresion-de-genes-marcadores-que-distinguen-al-grupo-0-del-grupo-1" title="Link to this heading">#</a></h2>
+<p>Representación en gráfico de violin que complementa al gráfico paso 56. La cantidad de genes graficadas puede cambiarse en ‘Method used for plotting/ Number of genes to show: 10’</p>
+<p>Utilizar la herramienta <strong>“Plot with scanpy”</strong> con los siguientes ajustes:</p>
+<ul class="simple">
+<li><p>_Data input: _’adata’ (h5ad) (no manipulable en Flujo de Trabajo; corresponde al Archivo UMAP agrupado – wilc – grupo 0 vs 1).</p></li>
+<li><p><em>Format for saving figures:</em> png</p></li>
+<li><p><em>Method used for plotting:</em> Marker genes: Plot ranking of genes as violin plot, using ‘pl.rank_genes_groups_violin’</p>
+<ul>
+<li><p><em>Which genes to plot?:</em> A number of genes</p>
+<ul>
+<li><p><em>Number of genes to show:</em> 10</p></li>
+</ul>
+</li>
+<li><p><em>Use ‘raw’ attribute of input if present:</em> Yes</p></li>
+<li><p><em>Split the violins?:</em> Yes</p></li>
+</ul>
+</li>
+<li><p><em>Configure Output: ‘out_png’:</em></p>
+<ul>
+<li><p><em>Label:</em> 57: Diferencia de expresión de genes marcadores que distinguen al grupo 0 del grupo 1.</p></li>
+<li><p>_Rename dataset: _57: Diferencia de expresión de genes marcadores que distinguen al grupo 0 del grupo 1.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dimensiones.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reducción de dimensiones</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="anotacion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Anotación de tipos celulares</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-marcadores-t-test">44: Identificación de marcadores (t-test)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-marcadores-wilcoxon">45: Identificación de marcadores (Wilcoxon)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-t-test">46: Gráfico: Genes con mayor influencia en cada grupo de células (t-test)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-con-mayor-influencia-t-test">47: Genes con mayor influencia (t-test)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-genes-con-mayor-influencia-en-cada-grupo-de-celulas-wilcoxon">48: Gráfico: Genes con mayor influencia en cada grupo de células (Wilcoxon)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-n-marcadores-en-cada-grupo-violin">49: Gráfico: Expresión de N marcadores en cada grupo (violín)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-n-marcadores-en-cada-grupo-mapa-de-vecinos">50: Gráfico: Expresión de N marcadores en cada grupo (mapa de vecinos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-expresion-de-los-top-n-marcadores-en-celulas-de-cada-grupo-heatmap">51: Gráfico: Expresión de los top N marcadores en células de cada grupo (heatmap)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-con-mayor-influencia-wilcoxon">52: Genes con mayor influencia (Wilcoxon)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-la-expresion-de-marcadores">53: Comparación de la expresión de marcadores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-marcadores-entre-dos-grupos">54: Identificación de marcadores entre dos grupos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-ranking-de-genes-que-distinguen-al-grupo-0-del-grupo-1">56: Gráfico: Ranking de genes que distinguen al grupo 0 del grupo 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-diferencia-de-expresion-de-genes-marcadores-que-distinguen-al-grupo-0-del-grupo-1">57: Gráfico: Diferencia de expresión de genes marcadores que distinguen al grupo 0 del grupo 1</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LatinCells
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

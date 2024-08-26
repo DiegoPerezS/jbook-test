@@ -1,0 +1,19 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Primeros Pasos
+    chapters:
+    - file: galaxy
+  - caption: Preprocesamiento
+    chapters:    
+    - file: AnnData
+    - file: preprocesamiento
+    - file: qc
+  - caption: Filtrado de datos
+    chapters:
+    - file: caracteristicas
+    - file: dimensiones
+  - caption: Anotación
+    chapters:
+    - file: marcadores
+    - file: anotacion
